@@ -1,9 +1,10 @@
 #ifndef _ADAFRUIT_GFX_H
 #define _ADAFRUIT_GFX_H
 
-#include "application.h"
-#include "fonts.h"
+#include "Arduino.h"
+#include "Print.h"
 
+#include "fonts.h"
 
 #define swap(a, b) { int16_t t = a; a = b; b = t; }
 
