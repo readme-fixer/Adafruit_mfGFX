@@ -21,5 +21,4 @@ struct FontDescriptor
 extern const uint8_t arial_8ptBitmaps[];
 extern const FontDescriptor arial_8ptDescriptors[];
 
-
 #endif
