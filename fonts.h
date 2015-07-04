@@ -5,10 +5,12 @@
 #include <avr/pgmspace.h>
 
 // Font selection descriptors - Add an entry for each new font and number sequentially
-#define ARIAL_8		0
+#define dejaVuSansMono_24	0
+#define dejaVuSansMono_48	1
+#define dejaVuSansMono_96	2
 
 #define FONT_START 0
-#define FONT_END 1
+#define FONT_END   1
 
 struct FontDescriptor
 {
@@ -18,7 +20,13 @@ struct FontDescriptor
 };
 
 // Font references - add pair of references for each new font
-extern const uint8_t arial_8ptBitmaps[];
-extern const FontDescriptor arial_8ptDescriptors[];
+extern const uint8_t dejaVuSansMono_24ptBitmaps[];
+extern const FontDescriptor dejaVuSansMono_24ptDescriptors[];
+
+extern const uint8_t dejaVuSansMono_48ptBitmaps[];
+extern const FontDescriptor dejaVuSansMono_48ptDescriptors[];
+
+extern const uint8_t dejaVuSansMono_96ptBitmaps[];
+extern const FontDescriptor dejaVuSansMono_96ptDescriptors[];
 
 #endif
