@@ -1,7 +1,6 @@
 #include "Adafruit_mfGFX.h"
 #include "fonts.h"
-
-#define pgm_read_byte(addr) (*(const uint8_t *)(addr))
+#include <avr/pgmspace.h>
 
 Adafruit_GFX::Adafruit_GFX(int16_t w, int16_t h):
   WIDTH(w), HEIGHT(h)
@@ -9,11 +8,11 @@ Adafruit_GFX::Adafruit_GFX(int16_t w, int16_t h):
   _width    = WIDTH;
   _height   = HEIGHT;
   rotation  = 0;
-  cursor_y  = cursor_x    = 0;
+  cursor_y  = cursor_x = 0;
   textsize  = 1;
-  textcolor = textbgcolor = 0xFFFF;
-  wrap      = true;
-  setFont(dejaVuSansMono_96);
+  textcolor = textbgcolor = 0x0000;
+  wrap      = false;
+  setFont(lucidaSansUnicode_24);
  }
 
 void Adafruit_GFX::setFont(uint8_t f) {
@@ -34,8 +33,13 @@ void Adafruit_GFX::setFont(uint8_t f) {
       fontDesc = dejaVuSansMono_96ptDescriptors;
       fontKern = 1;
       break;
+    case lucidaSansUnicode_24:
+      fontData = lucidaSansUnicode_24ptBitmaps;
+      fontDesc = lucidaSansUnicode_24ptDescriptors;
+      fontKern = 1;
+      break;
 	  default:
-      font = dejaVuSansMono_96;
+      font = lucidaSansUnicode_24;
       fontData = dejaVuSansMono_96ptBitmaps;
 	    fontDesc = dejaVuSansMono_96ptDescriptors;
       fontKern = 1;
