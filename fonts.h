@@ -1,13 +1,11 @@
 #ifndef _fonts_h
 #define _fonts_h
 
-#include <avr/io.h>
-#include <avr/pgmspace.h>
-
 // Font selection descriptors - Add an entry for each new font and number sequentially
-#define dejaVuSansMono_24	0
-#define dejaVuSansMono_48	1
-#define dejaVuSansMono_96	2
+#define dejaVuSansMono_24			 0
+#define dejaVuSansMono_48			 1
+#define dejaVuSansMono_96	     2
+#define lucidaSansUnicode_24   3
 
 #define FONT_START 0
 #define FONT_END   1
@@ -28,5 +26,8 @@ extern const FontDescriptor dejaVuSansMono_48ptDescriptors[];
 
 extern const uint8_t dejaVuSansMono_96ptBitmaps[];
 extern const FontDescriptor dejaVuSansMono_96ptDescriptors[];
+
+extern const uint8_t lucidaSansUnicode_24ptBitmaps[];
+extern const FontDescriptor lucidaSansUnicode_24ptDescriptors[];
 
 #endif
