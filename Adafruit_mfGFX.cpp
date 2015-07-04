@@ -13,21 +13,31 @@ Adafruit_GFX::Adafruit_GFX(int16_t w, int16_t h):
   textsize  = 1;
   textcolor = textbgcolor = 0xFFFF;
   wrap      = true;
-  setFont(ARIAL_8);
+  setFont(dejaVuSansMono_96);
  }
 
 void Adafruit_GFX::setFont(uint8_t f) {
   font = f;
   switch(font) {
-    case ARIAL_8:
-      fontData = arial_8ptBitmaps;
-	    fontDesc = arial_8ptDescriptors;
+    case dejaVuSansMono_24:
+      fontData = dejaVuSansMono_24ptBitmaps;
+	    fontDesc = dejaVuSansMono_24ptDescriptors;
       fontKern = 1;
       break;
-	default:
-      font = ARIAL_8;
-      fontData = arial_8ptBitmaps;
-	    fontDesc = arial_8ptDescriptors;
+    case dejaVuSansMono_48:
+      fontData = dejaVuSansMono_48ptBitmaps;
+      fontDesc = dejaVuSansMono_48ptDescriptors;
+      fontKern = 1;
+      break;
+    case dejaVuSansMono_96:
+      fontData = dejaVuSansMono_96ptBitmaps;
+      fontDesc = dejaVuSansMono_96ptDescriptors;
+      fontKern = 1;
+      break;
+	  default:
+      font = dejaVuSansMono_96;
+      fontData = dejaVuSansMono_96ptBitmaps;
+	    fontDesc = dejaVuSansMono_96ptDescriptors;
       fontKern = 1;
       break;
   }
