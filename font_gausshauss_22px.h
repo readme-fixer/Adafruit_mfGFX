@@ -633,8 +633,6 @@ const uint8_t gausshauss_16ptBitmaps[] =
     0x00, //   
     0x00, //   
     0x00, //   
-    0x00, //   
-    0x00, //   
     0xC0, // ##
     0xC0, // ##
     0x00, //   
@@ -644,6 +642,8 @@ const uint8_t gausshauss_16ptBitmaps[] =
     0x00, //   
     0xC0, // ##
     0xC0, // ##
+    0x00, //   
+    0x00, //   
     0x00, //   
     0x00, //   
     0x00, //   

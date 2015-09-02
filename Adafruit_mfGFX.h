@@ -63,8 +63,7 @@ struct FontDescriptor
 #endif
 
 
-
-#define swap(a, b) { int16_t t = a; a = b; b = t; }
+#define agswap(a, b) { int16_t t = a; a = b; b = t; }
 
 class Adafruit_GFX : public Print {
 
@@ -180,13 +179,13 @@ class Adafruit_GFX : public Print {
   virtual void drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint16_t color) {
     int16_t steep = abs(y1 - y0) > abs(x1 - x0);
     if (steep) {
-      swap(x0, y0);
-      swap(x1, y1);
+      agswap(x0, y0);
+      agswap(x1, y1);
     }
 
     if (x0 > x1) {
-      swap(x0, x1);
-      swap(y0, y1);
+      agswap(x0, x1);
+      agswap(y0, y1);
     }
 
     int16_t dx, dy;
@@ -371,13 +370,13 @@ class Adafruit_GFX : public Print {
 
     // Sort coordinates by Y order (y2 >= y1 >= y0)
     if (y0 > y1) {
-      swap(y0, y1); swap(x0, x1);
+      agswap(y0, y1); agswap(x0, x1);
     }
     if (y1 > y2) {
-      swap(y2, y1); swap(x2, x1);
+      agswap(y2, y1); agswap(x2, x1);
     }
     if (y0 > y1) {
-      swap(y0, y1); swap(x0, x1);
+      agswap(y0, y1); agswap(x0, x1);
     }
 
     if(y0 == y2) { // Handle awkward all-on-same-line case as its own thing
@@ -418,7 +417,7 @@ class Adafruit_GFX : public Print {
       a = x0 + (x1 - x0) * (y - y0) / (y1 - y0);
       b = x0 + (x2 - x0) * (y - y0) / (y2 - y0);
       */
-      if(a > b) swap(a,b);
+      if(a > b) agswap(a,b);
       drawFastHLine(a, y, b-a+1, color);
     }
 
@@ -435,7 +434,7 @@ class Adafruit_GFX : public Print {
       a = x1 + (x2 - x1) * (y - y1) / (y2 - y1);
       b = x0 + (x2 - x0) * (y - y0) / (y2 - y0);
       */
-      if(a > b) swap(a,b);
+      if(a > b) agswap(a,b);
       drawFastHLine(a, y, b-a+1, color);
     }
   }
