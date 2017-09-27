@@ -34,14 +34,14 @@ Example:
 // see Adafruit_mfGFX.h for a complete list of supported fonts.
 // Note: Each defined font MUST have a unique ID. It doesn't matter what the
 // integer ID is, as long as it's unique. For instance:
-#define font_gausshauss_22   1
-#define font_marlboro_48     2
-#define font_republica_22    3
+# define font_gausshauss_22   1
+# define font_marlboro_48     2
+# define font_republica_22    3
 
-#include <Adafruit_mfGFX.h>
-#include <Adafruit_SSD1306.h>
-#include <SPI.h>
-#include <Wire.h>
+# include <Adafruit_mfGFX.h>
+# include <Adafruit_SSD1306.h>
+# include <SPI.h>
+# include <Wire.h>
 
 void writeMedium(const char *str, uint8_t line) {
   display.setFont(font_gausshauss_22);
